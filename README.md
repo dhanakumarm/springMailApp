@@ -1,0 +1,2 @@
+# springMailApp
+Spring mail application 
