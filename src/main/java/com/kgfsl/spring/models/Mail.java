@@ -1,12 +1,19 @@
 package com.kgfsl.spring.models;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name= "mailhbtest")	
 public class Mail {
 	
+	@Id
 	private long id;
 	private String subject;
 	private String message;
-	private String from;
-	private String to;
+	private String from2;
+	private String to2;
 	
 	public long getId() {
 		return id;
@@ -27,16 +34,16 @@ public class Mail {
 		this.message = message;
 	}
 	public String getFrom() {
-		return from;
+		return from2;
 	}
-	public void setFrom(String from) {
-		this.from = from;
+	public void setFrom(String from2) {
+		this.from2 = from2;
 	}
 	public String getTo() {
-		return to;
+		return to2;
 	}
-	public void setTo(String to) {
-		this.to = to;
+	public void setTo(String to2) {
+		this.to2 = to2;
 	}
 
 }
