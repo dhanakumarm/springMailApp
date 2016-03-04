@@ -69,6 +69,7 @@ public class HibernateConfig {
 	}
 
 	@Bean
+	@Autowired
 	public HibernateTransactionManager transactionManager(SessionFactory s) {
 		HibernateTransactionManager txManager = new HibernateTransactionManager();
 		txManager.setSessionFactory(s);

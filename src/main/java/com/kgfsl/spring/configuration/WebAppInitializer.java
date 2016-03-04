@@ -13,7 +13,7 @@ public class WebAppInitializer extends
 	@Override
 	protected Class<?>[] getRootConfigClasses() {
 
-		return new Class[] { SpringConfiguration.class,HibernateConfig.class };
+		return new Class[] { WebMvcConfig.class,HibernateConfig.class };
 	}
 
 	@Override
