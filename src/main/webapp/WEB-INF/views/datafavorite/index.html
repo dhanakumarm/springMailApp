@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html layout:decorator="layouts/layout">
+<body ng-app="myApp">
+	<div ng-controller="FavoriteController as favoriteCtrl" class="container" layout:fragment="content">
+	
+		<span th:text="${message}"></span>
+		<h3>{{headingTitle}}</h3>
+		
+		<div class="box-body">
+
+			<form method="post"
+				action="/others/psychDev/citiesDataFauvorite/create"
+				id="cities-data-fauvorite-form" class="form-horizontal">							
+
+				<div class="form-group">
+					<label for="CitiesDataFauvorite_city"
+						class="col-sm-4 control-label ">City</label>
+					<div class="col-sm-2">
+						<select id="CitiesDataFauvorite_city"
+							name="CitiesDataFauvorite[city]" class="form-control">
+							<option value="">City</option>
+							<option value="1">AHMEDABAD</option>
+							<option value="2">Akola</option>
+							<option value="3">Allahabad</option>
+							<option value="4">Amritsar</option>
+							<option value="5">Aurangabad</option>
+							<option value="6">Bikaner</option>
+							<option value="7">Bhubneshwar</option>
+							<option value="8">Bhopal</option>
+							<option value="9">Bhagalpur</option>
+							<option value="10">Belgaum</option>
+							<option value="11">Barmer</option>
+							<option value="12">Bangalore</option>
+							<option value="13">CALCUTTA</option>
+							<option value="14">CHENNAI</option>
+							<option value="15">Chennai-Madras</option>
+							<option value="16">Chitradurg</option>
+							<option value="17">Dehradun</option>
+							<option value="18">Dibrugarh</option>
+							<option value="19">Gorakhpur</option>
+							<option value="20">Guwahati</option>
+							<option value="21">Gwalior</option>
+							<option value="22">GOA/PANJIM</option>
+							<option value="23">Kolkata</option>
+							<option value="24">Jorhat</option>
+							<option value="25">Jodhpur</option>
+							<option value="26">Jamnagar</option>
+							<option value="27">Jaisalmer</option>
+							<option value="28">Jaipur</option>
+							<option value="29">Jagdelpur</option>
+							<option value="30">Jabalpur</option>
+							<option value="31">Indore</option>
+							<option value="32">Imphal</option>
+							<option value="33">Hyderabad</option>
+							<option value="34">Hissar</option>
+						</select>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label for="CitiesDataFauvorite_type"
+						class="col-sm-4 control-label ">Type</label>
+					<div class="col-sm-2">
+						<select id="CitiesDataFauvorite_type"
+							name="CitiesDataFauvorite[type]" class="form-control">
+							<option value="HH">High Humidity</option>
+							<option selected="selected" value="HT">Temperature</option>
+						</select>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label for="CitiesDataFauvorite_db" class="col-sm-4 control-label ">DB</label>
+					<div class="col-sm-2">
+						<div class="input-group">
+							<input type="text" value="" id="CitiesDataFauvorite_db"
+								name="CitiesDataFauvorite[db]" maxlength="20" size="20"
+								class="form-control input_db_calc" />
+						</div>
+					</div>
+				</div>
+
+
+				<div class="form-group">
+					<label for="" class="col-sm-4 control-label ">InNum</label>
+					<div class="col-sm-2">
+						<select id="InNum" name="InNum"
+							class="form-control input_InNum_calc">
+							<option selected="selected" value="1">Wet bulb</option>
+							<option value="2">Dew point</option>
+							<option value="3">RH</option>
+							<option value="4">Humidity Ratio</option>
+							<option value="7">Enthalpy</option>
+						</select>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label for="" class="col-sm-4 control-label ">Inv</label>
+					<div class="col-sm-2">
+						<input type="text" id="Inv" name="Inv" value="" maxlength="20"
+							size="20" class="form-control input_InV_calc" />
+					</div>
+				</div>
+
+
+				<div class="form-group">
+					<label for="CitiesDataFauvorite_dp" class="col-sm-4 control-label ">DP</label>
+					<div class="col-sm-2">
+						<div class="input-group">
+							<input type="text" value="" id="CitiesDataFauvorite_dp"
+								name="CitiesDataFauvorite[dp]" maxlength="20" size="20"
+								class="form-control input_dp_calc" />
+						</div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label for="CitiesDataFauvorite_wb" class="col-sm-4 control-label ">WB</label>
+					<div class="col-sm-2">
+						<div class="input-group">
+							<input type="text" value="" id="CitiesDataFauvorite_wb"
+								name="CitiesDataFauvorite[wb]" maxlength="20" size="20"
+								class="form-control input_wb_calc" />
+						</div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label for="CitiesDataFauvorite_rh" class="col-sm-4 control-label ">RH</label>
+					<div class="col-sm-2">
+						<div class="input-group">
+							<input type="text" value="" id="CitiesDataFauvorite_rh"
+								name="CitiesDataFauvorite[rh]" maxlength="20" size="20"
+								class="form-control input_rh_calc" />
+						</div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label for="CitiesDataFauvorite_h" class="col-sm-4 control-label ">H</label>
+					<div class="col-sm-2">
+						<div class="input-group">
+							<input type="text" value="" id="CitiesDataFauvorite_h"
+								name="CitiesDataFauvorite[h]" maxlength="20" size="20"
+								class="form-control input_h_calc" />
+						</div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label for="CitiesDataFauvorite_w" class="col-sm-4 control-label ">W</label>
+					<div class="col-sm-2">
+						<div class="input-group">
+							<input type="text" value="" id="CitiesDataFauvorite_w"
+								name="CitiesDataFauvorite[w]" maxlength="20" size="20"
+								class="form-control input_w_calc" />
+						</div>
+					</div>
+				</div>
+
+				<script>
+					function PsychCalcFav() {
+						alert();
+					}
+				</script>
+
+
+				<div class="box-footer pull-right">
+					<a href="/others/psychDev/citiesDataFauvorite/admin"
+						class="btn btn-default">Cancel</a> <input type="button"
+						value="Calculate" name="yt0" onclick="PsychCalcFav()"
+						class="btn btn-tumblr" /> <input type="button" value="Create"
+						name="yt1" class="btn btn-success" />
+				</div>
+
+			</form>
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html layout:decorator="layouts/layout">
+
+<body>
+
+	<div class="container" layout:fragment="content">
+
+		<table class="table table-bordered table-hover dataTable no-footer">
+			<thead>
+				<tr role="row">
+					<th>ID</th>
+					<th>Country</th>
+					<th>City</th>
+					<th>Station</th>
+					<th>Elevation</th>
+					<th>Wmono</th>
+					<th>userid</th>
+					<th>Action</th>
+				</tr>
+			</thead>
+			<div th:each="cities :${cities_list}">
+			<tr>
+				<td><span th:text="${cities.id}"></span></td>
+				<td><span th:text="${cities.country}"></span></td>
+				<td><span th:text="${cities.city}"></span></td>
+				<td><span th:text="${cities.station_id}"></span></td>
+				<td><span th:text="${cities.Elevation}"></span></td>
+				<td><span th:text="${cities.wmono}"></span></td>
+				<td><span th:text="${cities.userid}"></span></td>
+				<td><a  th:href="@{'/cities/edit/' + ${cities.id}} ">Edit</a></td>
+			</tr>
+			</div>
+		</table>
+
+		<div class="hero-unit">
+			<form class="form-horizontal" id="cities-form" action="#" th:object="${Cities}" th:action="${actions}"
+				method="post">
+				<small class="text-red">Fields with <span class="required">*</span>
+					are required.
+				</small>
+
+				
+				<div class="form-group" th:if="${cities.id != null}">
+					<label class="col-sm-4 control-label  required" for="Cities_id">Id
+						<span class="required">*</span>
+					</label>
+					<div class="col-sm-4" >
+						<input class="form-control" size="60" maxlength="60" readonly="readonly"  
+							name="id" id="Cities_id" type="text" th:value="${cities.id}" />
+					</div>
+				</div>
+				
+				<div class="form-group">
+					<label class="col-sm-4 control-label  required"
+						for="Cities_country">Country <span class="required">*</span></label>
+					<div class="col-sm-4">
+						<select class="form-control" name="country"
+							id="Cities_country">
+							<option value="">Country</option>
+							<option value="1">United Arab Emirates</option>
+							<option value="2">Bangladesh</option>
+							<option value="3">China</option>
+							<option value="4">India</option>
+							<option value="5">Iran - Islamic Republic of</option>
+							<option value="6">Japan</option>
+							<option value="7">Kazakhstan</option>
+							<option value="8">Korea - Republic of</option>
+							<option value="9">Kuwait</option>
+							<option value="10">Sri Lanka</option>
+							<option value="11">Macau</option>
+							<option value="12">Maldives</option>
+							<option value="13">Mongolia</option>
+							<option value="14">Nepal</option>
+							<option value="15">Pakistan</option>
+							<option value="16">Korea - Democratic People's Republic
+								of</option>
+							<option value="17">Russian Federation</option>
+							<option value="18">Saudi Arabia</option>
+							<option value="19">Thailand</option>
+							<option value="20">Taiwan</option>
+							<option value="21">Uzbekistan</option>
+							<option value="22">Viet Nam</option>
+						</select>
+					</div>
+				</div>
+
+
+		
+				
+				<div class="form-group">
+					<label class="col-sm-4 control-label  required" for="Cities_city">City
+						<span class="required">*</span>
+					</label>
+					<div class="col-sm-4">
+						<input class="form-control" size="60" maxlength="60"  
+							name="city" id="Cities_city" type="text" th:value="${cities.city}" />
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label class="col-sm-4 control-label  required"
+						for="Cities_station_id">Station <span class="required">*</span></label>
+					<div class="col-sm-4">
+						<input class="form-control" size="60" maxlength="60"
+							name="station_id" id="Cities_station_id" type="text" th:value="${cities.station_id}" />
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label class="col-sm-4 control-label " for="Cities_Elevation">Elevation</label>
+					<div class="col-sm-4">
+						<input class="form-control" size="20" maxlength="20"
+							name="Elevation" id="Cities_Elevation" type="text"
+							th:value="${cities.Elevation}" />
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label class="col-sm-4 control-label " for="Cities_wmono">Wmono</label>
+					<div class="col-sm-4">
+						<input class="form-control" size="20" maxlength="20"
+							name="wmono" id="Cities_wmono" type="text" th:value="${cities.wmono}" />
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label class="col-sm-4 control-label " for="Cities_userid">Userid</label>
+					<div class="col-sm-4">
+						<input class="form-control" name="userid"
+							id="Cities_userid" type="text" th:value="${cities.userid}" />
+					</div>
+				</div>
+
+				<div class="box-footer pull-right">
+					<a href="#" class="btn btn-default" role="button">Cancel</a> <input
+						class="btn btn-success" type="submit" name="yt0" value="Create" />
+				</div>
+
+			</form>
+		</div>
+<script type="text/javascript" th:inline="javascript">
+	//<![CDATA[    
+    var headertext=[[${cities.country}]];     
+    $("#Cities_country").val(headertext);    
+  //]]>
+</script>
+	</div>
+	
+</body>
+</html>
