@@ -19,6 +19,7 @@
         <org.thymeleaf.extras.tiles2-version>2.1.1.RELEASE</org.thymeleaf.extras.tiles2-version>
         <org.thymeleaf.extras.springsecurity3-version>2.1.1.RELEASE</org.thymeleaf.extras.springsecurity3-version>
         <nz.net.ultraq.thymeleaflayout-version>1.2.1</nz.net.ultraq.thymeleaflayout-version>
+        <jackson.version>2.5.3</jackson.version>
 	</properties>
 	<dependencies>
 		<!-- Spring -->
@@ -68,7 +69,12 @@
         </dependency>
         
        
-        
+        <!-- Jackson JSON Processor -->
+	<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-databind</artifactId>
+			<version>${jackson.version}</version>
+		</dependency>
  
         <!-- jsr303 validation -->
         <dependency>
@@ -236,7 +242,10 @@
 			<artifactId>junit</artifactId>
 			<version>4.7</version>
 			<scope>test</scope>
-		</dependency>        
+		</dependency>      
+		
+
+		  
 	</dependencies>
     <build>
         <plugins>

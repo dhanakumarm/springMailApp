@@ -6,56 +6,14 @@
 
 		<span th:text="${message}"></span>
 		<h3>{{headingTitle}}</h3>
-		
+
 		<div class="row">
-                <a href="add" class="btn btn-app"> Create</a>
-                <a href="#" class="btn btn-app"> List</a>               
-            </div>
-
-		<table class="table table-bordered table-hover">
-			<thead>
-				<tr>
-					<th>ID</th>
-					<th>City</th>
-					<th>Type</th>
-					<th>DB</th>
-					<th>DP</th>
-					<th>WB</th>
-					<th>RH</th>
-					<th>H</th>
-					<th>W</th>
-					<th width="20%">Actionss</th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr ng-repeat="u in favoriteCtrl.dataFav">
-					<td><span ng-bind="u.id"></span></td>
-					<td><span ng-bind="u.cityId.city"></span></td>
-					<td><span ng-bind="u.type"></span></td>
-					<td><span ng-bind="u.db"></span></td>
-					<td><span ng-bind="u.dp"></span></td>
-					<td><span ng-bind="u.wb"></span></td>
-					<td><span ng-bind="u.rh"></span></td>
-					<td><span ng-bind="u.h"></span></td>
-					<td><span ng-bind="u.w"></span></td>
-					<td>						
-						<button class="btn btn-default"
-							ng-click="ctrl.edit(u.id)" type="button">View</button>
-						<button class="btn btn-default"
-							ng-click="ctrl.edit(u.id)" type="button">Edit</button>
-						<button class="btn btn-default"
-							ng-click="ctrl.remove(u.id)" type="button">Remove</button>
-					</td>
-				</tr>
-			</tbody>
-		</table>
-
-		
-		<!-- <div class="box-body">
-
-			<form method="post"
-				action="/others/psychDev/citiesDataFauvorite/create"
-				id="cities-data-fauvorite-form" class="form-horizontal">
+			<a href="#" class="btn btn-app"> Create</a> <a href="#"
+				class="btn btn-app"> List</a>
+		</div>
+		<div class="box-body">
+			<form method="post" id="cities-data-fauvorite-form"
+				class="form-horizontal">
 
 				<div class="form-group">
 					<label for="CitiesDataFauvorite_city"
@@ -213,14 +171,16 @@
 
 				<div class="box-footer pull-right">
 					<a href="/others/psychDev/citiesDataFauvorite/admin"
-						class="btn btn-default">Cancel</a> <input type="button"
-						value="Calculate" name="yt0" onclick="PsychCalcFav()"
-						class="btn btn-tumblr" /> <input type="button" value="Create"
+						class="btn btn-default">Cancel</a> 
+						
+						<input type="button"
+						value="Calculate" name="yt0" ng-click="favoriteCtrl.calculatePsych()" class="btn btn-danger custom-width"
+						 /> <input type="button" value="Create"
 						name="yt1" class="btn btn-success" />
 				</div>
 
 			</form>
-		</div> -->
+		</div>
 	</div>
 </body>
 </html>
